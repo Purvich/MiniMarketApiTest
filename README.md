@@ -3,7 +3,7 @@
 
 <h1>Тесты:</h1>
 
-<h2><a href="https://github.com/Purvich/MiniMarketApiRetrofit/blob/master/src/test/java/tests/ProductEnd2EndTest.java">Сценарные:</a></h2>
+<h2><a href="https://github.com/Purvich/MiniMarketApiTest/blob/master/src/test/java/miniMarketTests/scenario/ProductEnd2EndTest.java">Сценарные:</a></h2>
 
 <ul>
   <li>Создание продукта</li>
