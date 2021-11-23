@@ -1,8 +1,9 @@
-package tests;
+package miniMarketTests.scenario;
 
 import com.sun.org.glassfish.gmbal.Description;
-import dto.Product;
-import enums.CategoryType;
+import miniMarket.dto.Product;
+import miniMarket.enums.CategoryType;
+import miniMarketTests.BaseTest;
 import org.junit.jupiter.api.*;
 import retrofit2.Response;
 

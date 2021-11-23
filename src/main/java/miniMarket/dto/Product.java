@@ -1,4 +1,4 @@
-package dto;
+package miniMarket.dto;
 
 import lombok.*;
 

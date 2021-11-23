@@ -1,6 +1,7 @@
-package tests;
+package miniMarketTests.product.getProduct;
 
-import dto.Product;
+import miniMarket.dto.Product;
+import miniMarketTests.BaseTest;
 import org.junit.jupiter.api.Test;
 import retrofit2.Response;
 

@@ -1,6 +1,6 @@
-package service;
+package miniMarket.service;
 
-import dto.Product;
+import miniMarket.dto.Product;
 import retrofit2.Call;
 import retrofit2.http.*;
 

@@ -1,4 +1,4 @@
-package enums;
+package miniMarket.enums;
 
 import lombok.Getter;
 

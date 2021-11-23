@@ -1,7 +1,8 @@
-package tests;
+package miniMarketTests.category;
 
-import dto.Category;
-import enums.CategoryType;
+import miniMarket.dto.Category;
+import miniMarket.enums.CategoryType;
+import miniMarketTests.BaseTest;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
 import retrofit2.Response;

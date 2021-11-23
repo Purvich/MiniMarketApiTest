@@ -1,16 +1,17 @@
-package tests;
+package miniMarketTests;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import retrofit2.Retrofit;
-import service.CategoryService;
-import service.ProductService;
-import utils.RetrofitUtils;
+import miniMarket.service.CategoryService;
+import miniMarket.service.ProductService;
+import miniMarket.utils.RetrofitUtils;
 
 public class BaseTest {
 
-    static Retrofit retrofit;
-    static CategoryService categoryService;
-    static ProductService productService;
+    public static Retrofit retrofit;
+    public static CategoryService categoryService;
+    public static ProductService productService;
 
     @BeforeAll
     static void beforeAll() {
