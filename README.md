@@ -5,9 +5,9 @@
 
 <h2>Категории</h2>
 
-<ul>
+<ol>
   <li><a href="https://github.com/Purvich/MiniMarketApiTest/blob/master/src/test/java/miniMarketTests/category/CategoryTest.java">Получение списка всех категорий<a/></li>
-</ul>
+</ol>
 
 <h2>Продукты</h2>
 
@@ -23,9 +23,9 @@
 
 <h2><a href="https://github.com/Purvich/MiniMarketApiTest/blob/master/src/test/java/miniMarketTests/scenario/ProductEnd2EndTest.java">Сценарные:</a></h2>
 
-<ul>
+<ol>
   <li>Создание продукта</li>
   <li>Получение продукта</li>
   <li>Обновление информации о продукте</li>
   <li>Удаление продукта</li>
-</ul>
+</ol>
