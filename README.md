@@ -1,4 +1,4 @@
-# Mini Market
+# <a href="http://80.78.248.82:8189/market/swagger-ui.html#/product-controller/createNewProductUsingPOST">Mini Market</a>
 <p>Автотесты для Api написанные с использованием Rest клиента Retrofit, фреймворка JUnit, библиотек Jackson, Lombok, AssertJ </p>
 
 <h1>Тесты:</h1>
@@ -20,8 +20,6 @@
   </ul>
   <li><a href="https://github.com/Purvich/MiniMarketApiTest/blob/master/src/test/java/miniMarketTests/product/getProduct/GetProductsTest.java">Получение списка продуктов</a></li>
 </ol>
-
-
 
 <h2><a href="https://github.com/Purvich/MiniMarketApiTest/blob/master/src/test/java/miniMarketTests/scenario/ProductEnd2EndTest.java">Сценарные:</a></h2>
 
