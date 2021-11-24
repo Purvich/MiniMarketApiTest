@@ -1,4 +1,4 @@
-package miniMarketTests.product.createProduct.positive;
+package miniMarketTests.product.createProduct;
 
 import com.sun.org.glassfish.gmbal.Description;
 import miniMarket.dto.Product;
