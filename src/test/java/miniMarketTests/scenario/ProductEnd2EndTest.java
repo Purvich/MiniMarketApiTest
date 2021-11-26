@@ -1,12 +1,14 @@
 package miniMarketTests.scenario;
 
 import com.sun.org.glassfish.gmbal.Description;
+import miniMarket.Params;
 import miniMarket.dto.Product;
 import miniMarket.enums.CategoryType;
 import miniMarketTests.BaseTest;
 import org.junit.jupiter.api.*;
 import retrofit2.Response;
 
+import java.io.EOFException;
 import java.io.IOException;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -18,25 +20,21 @@ public class ProductEnd2EndTest extends BaseTest {
     static Product product;
     static Long id;
 
-    private static final String firstProduct = "Bread";
-    private static final String updateProduct = "Yesterday bread";
-    private static final int firstPrice = 100;
-    private static final int updatePrice = 50;
-
     @Test
     @Description("Create product")
     @Order(1)
     void createProduct() throws IOException {
         product = new Product()
-                .withTitle(firstProduct)
-                .withPrice(firstPrice)
+                .withTitle(Params.PRODUCT_TITLE)
+                .withPrice(Params.PRODUCT_PRICE)
                 .withCategoryTitle(CategoryType.FOOD.getTitle());
 
         Response<Product> response = productService.createProduct(product).execute();
 
         assertThat(response.code()).isEqualTo(201);
         assertThat(response.body().getId()).isNotNull();
-        assertThat(response.body().getTitle()).isEqualTo(product.getTitle());
+        assertThat(response.body().getTitle()).isEqualTo(Params.PRODUCT_TITLE);
+        assertThat(response.body().getPrice()).isEqualTo(Params.PRODUCT_PRICE);
         assertThat(response.body().getCategoryTitle()).isEqualTo(product.getCategoryTitle());
 
         id = response.body().getId();
@@ -50,7 +48,8 @@ public class ProductEnd2EndTest extends BaseTest {
 
         assertThat(response.code()).isEqualTo(200);
         assertThat(response.body().getId()).isNotNull();
-        assertThat(response.body().getTitle()).isEqualTo(product.getTitle());
+        assertThat(response.body().getTitle()).isEqualTo(Params.PRODUCT_TITLE);
+        assertThat(response.body().getPrice()).isEqualTo(Params.PRODUCT_PRICE);
         assertThat(response.body().getCategoryTitle()).isEqualTo(product.getCategoryTitle());
     }
 
@@ -61,24 +60,25 @@ public class ProductEnd2EndTest extends BaseTest {
 
         product = new Product()
                 .withId(id)
-                .withTitle(updateProduct)
-                .withPrice(updatePrice)
+                .withTitle(Params.NEW_PRODUCT_TITLE)
+                .withPrice(Params.NEW_PRODUCT_PRICE)
                 .withCategoryTitle(CategoryType.FOOD.getTitle());
 
         Response<Product> response = productService.updateProduct(product).execute();
 
         assertThat(response.code()).isEqualTo(200);
         assertThat(response.body().getId()).isNotNull();
-        assertThat(response.body().getPrice()).isEqualTo(updatePrice);
-        assertThat(response.body().getTitle()).isEqualTo(updateProduct);
+        assertThat(response.body().getPrice()).isEqualTo(Params.NEW_PRODUCT_PRICE);
+        assertThat(response.body().getTitle()).isEqualTo(Params.NEW_PRODUCT_TITLE);
         assertThat(response.body().getCategoryTitle()).isEqualTo(product.getCategoryTitle());
     }
 
     @Test
     @Description("Delete product")
     @Order(4)
-    void deleteProduct() throws IOException {
-        Response<Product> response = productService.deleteProduct(id).execute();
-        assertThat(response.code()).isEqualTo(200);
+    void deleteProduct() {
+        Assertions.assertThrows(EOFException.class, () -> {
+            productService.deleteProduct(id).execute();
+        });
     }
 }
